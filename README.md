@@ -1,12 +1,76 @@
-# React + Vite
+CryptoWave - Crypto Price Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 About the Project
 
-Currently, two official plugins are available:
+CryptoWave is a cryptocurrency price tracker built with React and Tailwind CSS, utilizing the CoinGecko API to fetch real-time market data. The application provides users with updated prices, market trends, and other essential data for various cryptocurrencies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+Frontend: React.js, Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+API: CoinGecko API
+
+🎯 Features
+
+📈 Live cryptocurrency price updates
+
+🔍 Search functionality for cryptocurrencies
+
+📊 Display of market cap, volume, and percentage changes
+
+🌙 Dark mode for better user experience
+
+📂 Project Structure
+
+CryptoWave/
+│-- src/
+│ ├── components/
+│ ├── pages/
+│ ├── styles/
+│ ├── App.js
+│ ├── index.js
+│-- public/
+│-- package.json
+│-- README.md
+
+🚀 Installation & Setup
+
+Clone the repository
+
+git clone https://github.com/yourusername/CryptoWave.git
+cd CryptoWave
+
+Install dependencies
+
+yarn install # or npm install
+
+Start the development server
+
+yarn start # or npm start
+
+🔗 API Integration
+
+This project uses the CoinGecko API to fetch cryptocurrency data. No API key is required, but you can check the API docs for rate limits:
+CoinGecko API Docs
+
+Example API Call:
+
+fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
+.then(response => response.json())
+.then(data => console.log(data));
+
+📸 Screenshots
+
+(Add screenshots here)
+
+📝 License
+
+This project is open-source and available under the MIT License.
+
+📬 Contact
+
+For any inquiries, reach out to:
+
+Your Name - LinkedIn
+
+GitHub - YourGitHub
