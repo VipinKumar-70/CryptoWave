@@ -4,7 +4,7 @@ import bitcoin from "../assets/bitcoin.png";
 function Navbar() {
   return (
     <>
-      <header className="px-24 shadow-md font-serif">
+      <header className="px-24 shadow-md font-serif border-b-2 border-gray-600">
         <nav className="flex justify-between items-center py-6">
           <div>
             <a href="/" className="text-3xl font-bold flex items-center gap-2">
