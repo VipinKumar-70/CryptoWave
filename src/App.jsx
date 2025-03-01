@@ -1,14 +1,13 @@
-import { useState } from 'react'
-
+import Home from "./pages/Home";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div className='text-black text-4xl'>Hello World</div>
+      <div className="bg-linear-to-b from-gray-700 via-gray-800 to-gray-900 px-16 py-4 text-white">
+        <Home />
+      </div>
     </>
-  )
+  );
 }
-
-export default App
+ 
+export default App;
