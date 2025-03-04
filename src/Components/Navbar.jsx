@@ -1,7 +1,17 @@
 import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import bitcoin from "../assets/bitcoin.png";
+import { NavLink } from "react-router";
 function Navbar() {
+  const navlinks = [
+    { name: "Home", path: "/" },
+    {
+      name: "Features",
+      path: "/features",
+    },
+    { name: "Pricing", path: "/Pricing" },
+    { name: "Blog", path: "/Blog" },
+  ];
   return (
     <>
       <header className="px-24 shadow-md font-serif border-b-2 border-gray-600">
@@ -15,11 +25,14 @@ function Navbar() {
 
           {/* Navigation links */}
           <ul className="flex gap-x-10">
-            {["Home", "Features", "Pricing", "Blog"].map((item, index) => (
+            {navlinks.map((item, index) => (
               <li key={index}>
-                <a className="transition-all hover:text-gray-400" href="">
-                  {item}
-                </a>
+                <NavLink
+                  className="transition-all hover:text-gray-400"
+                  to={item.path}
+                >
+                  {item.name}
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -31,9 +44,15 @@ function Navbar() {
               id="currency"
               className="border-2 p-1 rounded"
             >
-              <option value="INR">INR</option>
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
+              <option className="text-black" value="INR">
+                INR
+              </option>
+              <option className="text-black" value="USD">
+                USD
+              </option>
+              <option className="text-black" value="EUR">
+                EUR
+              </option>
             </select>
 
             <button className="flex items-center gap-2 bg-white text-black text-[14px] text-center px-6 py-2 rounded-full font-medium">
