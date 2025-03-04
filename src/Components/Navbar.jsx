@@ -2,6 +2,7 @@ import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import bitcoin from "../assets/bitcoin.png";
 import { NavLink } from "react-router";
+
 function Navbar() {
   const navlinks = [
     { name: "Home", path: "/" },
@@ -12,6 +13,7 @@ function Navbar() {
     { name: "Pricing", path: "/Pricing" },
     { name: "Blog", path: "/Blog" },
   ];
+
   return (
     <>
       <header className="px-24 shadow-md font-serif border-b-2 border-gray-600">
