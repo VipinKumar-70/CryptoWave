@@ -1,12 +1,47 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import bitcoin from "../assets/bitcoin.png";
 import { TfiMenu } from "react-icons/tfi";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import { CoinContext } from "../context/CoinContext";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { setCurrency } = useContext(CoinContext);
+
+  const handleCurrency = (e) => {
+    switch (e.target.value) {
+      case "USD": {
+        setCurrency({
+          name: "USD",
+          symbol: "$",
+        });
+        break;
+      }
+      case "INR": {
+        setCurrency({
+          name: "INR",
+          symbol: "₹",
+        });
+        break;
+      }
+      case "EUR": {
+        setCurrency({
+          name: "EUR",
+          symbol: "€",
+        });
+        break;
+      }
+      default: {
+        setCurrency({
+          name: "USD",
+          symbol: "$",
+        });
+      }
+    }
+  };
 
   const navlinks = [
     { name: "Home", path: "/" },
@@ -49,15 +84,16 @@ function Navbar() {
           {/* Currency Selector & Signup Button */}
           <div className="flex items-center gap-x-1">
             <select
+              onChange={handleCurrency}
               name="currency"
               id="currency"
               className="border-2 md:p-1 p-0.5 rounded"
             >
-              <option className="text-black" value="INR">
-                INR
-              </option>
               <option className="text-black" value="USD">
                 USD
+              </option>
+              <option className="text-black" value="INR">
+                INR
               </option>
               <option className="text-black" value="EUR">
                 EUR
