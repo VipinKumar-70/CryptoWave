@@ -58,7 +58,7 @@ Ensure you have the following installed:
 1. **Clone the repository**:
 
    ```sh
-   git clone https://github.com/yourusername/CryptoWave.git
+   git clone https://github.com/VipinKumar-70/CryptoWave.git
    cd CryptoWave
    ```
 
