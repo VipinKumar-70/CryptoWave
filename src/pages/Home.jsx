@@ -4,6 +4,22 @@ import { CoinContext } from "../context/CoinContext";
 function Home() {
   const { allCoin, currency } = useContext(CoinContext);
   const [displayCoin, setDisplayCoin] = useState([]);
+  const [input, setInput] = useState("");
+
+  const inputHandler = (event) => {
+    setInput(event.target.value);
+    if (event.target.value === "") {
+      setDisplayCoin(allCoin);
+    }
+  };
+
+  const searchHandler = async (event) => {
+    event.preventDefault();
+    const coins = await allCoin.filter((item) => {
+      return item.name.toLowerCase().includes(input.toLowerCase());
+    });
+    setDisplayCoin(coins);
+  };
 
   useEffect(() => {
     setDisplayCoin(allCoin);
@@ -25,14 +41,26 @@ function Home() {
 
       {/* Search Bar */}
       <div className="relative w-full max-w-[375px] sm:max-w-md md:max-w-lg px-1">
-        <input
-          className="bg-white text-black font-semibold text-sm sm:text-base p-3 pr-24 w-full rounded-lg border border-gray-300 focus:outline-none"
-          type="search"
-          placeholder="Search Coin..."
-        />
-        <button className="bg-gray-700 text-white p-2 px-4 sm:px-6 absolute right-2 top-1/2 transform -translate-y-1/2 rounded-lg cursor-pointer font-semibold hover:bg-gray-600 transition text-sm sm:text-base">
-          Search
-        </button>
+        <form action="" onSubmit={searchHandler}>
+          <input
+            onChange={inputHandler}
+            value={input}
+            className="bg-white text-black font-semibold text-sm sm:text-base p-3 pr-28 w-full rounded-lg border border-gray-300 focus:outline-none"
+            type="search"
+            placeholder="Search Coin..."
+            list="coinlist"
+          />
+
+          <datalist id="coinlist">
+            {allCoin.map((item, index) => (
+              <option key={index} value={item.name} />
+            ))}
+          </datalist>
+
+          <button className="bg-gray-700 text-white p-2 px-4 sm:px-6 absolute right-2 top-1/2 transform -translate-y-1/2 rounded-lg cursor-pointer font-semibold hover:bg-gray-600 transition text-sm sm:text-base">
+            Search
+          </button>
+        </form>
       </div>
 
       {/* Table Header */}
