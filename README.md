@@ -89,6 +89,7 @@ fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd")
 
 ## 📸 Screenshots
 
+![Home page](https://github.com/user-attachments/assets/f2b4ae3d-c1d4-48f5-9bbd-ee141c9d6e1b)
 
 
 
